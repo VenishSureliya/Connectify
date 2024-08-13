@@ -13,16 +13,22 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
     "assert": "^2.1.0",
     "auto-install": "^1.7.4",
     "axios": "^1.7.4",
     "concurrently": "^8.2.2",
+    "create-hook-form": "^0.1.4",
     "https-browserify": "^1.0.0",
     "mongodb": "^6.8.0",
     "mui": "^0.0.1",
     "nodemon": "^3.1.4",
     "react-router-dom": "^6.26.0",
     "stream-browserify": "^3.0.0",
+    "uri": "^0.1.0",
     "url": "^0.11.4"
   }
 }

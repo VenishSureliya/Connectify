@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [name, setName] = useState("");
@@ -8,14 +8,14 @@ function Register() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("student");
   const [message, setMessage] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate(); // Updated to useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post("./api/users/register", { name, email, password, role });
       setMessage("Registration successful!");
-      history.push("./login");
+      navigate("./login"); // Updated to use navigate
     } catch (error) {
       setMessage(error.response.data.message || error.response.data.error);
     }
@@ -68,4 +68,4 @@ function Register() {
   );
 }
 
-export default Register
+export default Register;

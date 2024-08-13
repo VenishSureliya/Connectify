@@ -1,21 +1,15 @@
-import React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import AdminDashboard from "./pages/AdminDashboard"
-import AdminCreateUsers from "./pages/AdminCreateUsers"
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Register from "./pages/Register"; // Import your Register component
 
-
-function App(){
+function App() {
   return (
-    <Router>
-      <div className="App">
-        <switch>
-          <Route exact path="/">
-            <h1>Welcome to Connectify</h1>
-          </Route>
-        </switch>
-      </div>
+    <Router> {/* Wrap Routes in Router */}
+      <Routes>
+        <Route path="/" element={<Register />} /> {/* Set Register as the root page */}
+      </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
