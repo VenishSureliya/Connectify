@@ -31,5 +31,5 @@ connectToDatabase().then(() => {
 })
 
 app.get("/", (req, res) => {
-    res.send("index.js")
+    res.send("HELLOOO")
 })
