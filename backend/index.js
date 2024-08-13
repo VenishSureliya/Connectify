@@ -1,5 +1,6 @@
 const express = require("express")
 const { connectToDatabase } = require("./database")
+const path = require("path")
 // const mongoose = require("mongoose")
 
 // mongoose.connect(
@@ -16,9 +17,10 @@ const { connectToDatabase } = require("./database")
 
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 6000
 
 app.use(express.json())
+app.use(express.static(path.join(__dirname, "../frontend/src")))
 
 connectToDatabase().then(() => {
     app.listen(port, () => {
@@ -29,5 +31,5 @@ connectToDatabase().then(() => {
 })
 
 app.get("/", (req, res) => {
-    res.send("Hello World!!")
+    res.send("index.js")
 })
